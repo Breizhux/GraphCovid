@@ -130,13 +130,12 @@ def to_same_date() :
         first_date_hosp = int(hospi.readline().split(';')[0].replace('-','').replace('"',''))
 
     if date_depart != "" :
-        if first_date_hosp > date_depart and first_date_test > date_depart :
-            if first_date_hosp > first_date_test : date = first_date_hosp
-            else : date = first_date_test
+        date = int(date_depart.replace('-', ''))
+        if first_date_hosp > date and first_date_test > date :
             colorprint([('[ERROR]','red'),
                 (" La date indiqué est trop faible. Date minimum : {}".format(date),)])
             sys.exit(2)
-        start_date = int(date_depart.replace('-', ''))
+        start_date = date
     elif first_date_test > first_date_hosp :
         start_date = first_date_test
     else :
