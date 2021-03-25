@@ -20,6 +20,10 @@ Les fichiers de bases proviennent directement du site du gouvernement français.
 Il n'y a pas d'installation à effectuer. On lance seulement le programme `draw_covid.py`. Pour cela :
 > python3 draw_covid.py [options]
 
+Dépendance python : matplotlib
+> Systèmes Debian : `apt install -y python3-matplotlib`
+> Python : `pip install matplotlib`
+
 ### options disponbiles :
 
 |		option			|		Fonctionnalités			|
