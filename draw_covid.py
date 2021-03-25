@@ -226,7 +226,7 @@ def complete_file(del_colonne, displaytoday=True) :
             wc(infos, del_colonne, file="tmp.tmp")
 
     os.rename("tmp.tmp", result_path)
-    #Just to display informtions
+    #Just to display informations
     print_colonnes_name(displaytoday=displaytoday)
 
 def draw(colonnes) :
@@ -261,8 +261,10 @@ def draw(colonnes) :
         'r--','b--','g--','c--','m--','y--','k--']
     color_name = ['rouge', 'bleu', 'vert', 'cyan', 'mauve', 'jaune', 'noir']
     for i in range(len(colonnes)) :
-        pyplot.plot(Data[i], matplot_color[i])
+        pyplot.plot(Data[i], matplot_color[i], label=colonnes_name[colonnes[i]])
         print("    → [{}]\t:  {}".format(color_name[i%7], colonnes_name[colonnes[i]]))
+    pyplot.legend(loc='best')
+    pyplot.grid()
     pyplot.xticks(range(len(Data[0])), Dates, rotation=45)
     pyplot.show()
 
